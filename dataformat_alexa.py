@@ -13,7 +13,7 @@ try:
     read_file = open(sys.argv[1], 'r')
     write_file = open(temp_file, 'w')
     for line in read_file:
-        aaa = ['beforecontinueConversationtimne ','beforesendMessage ', 'timestamp: \'2018-09-18T', 'Z\'', 'beforeEnque response from bot ', ' ', '}', ',']
+        aaa = ['alexaSaystime','alexaIntenttime', 'botSaystime', 'Z\'', 'testreplytime', ' ', '}', ',']
         for a in aaa:
             if line.find(a) != -1:
                 line = re.sub(a, '', line)
@@ -22,7 +22,7 @@ try:
         try:
             d = line.replace('\r','')
             d = d.replace('\n','')
-            print(line)
+            
             if len(d) >= 15:
                 d = d[0:14]
             dt = datetime.strptime(d, '%H:%M:%S:%f')
